@@ -1,0 +1,211 @@
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 10px;
+}
+.cell {
+    background-color: rgb(220, 220, 220);
+    height: 100px;
+}
+
+/* default - small devices */
+
+[class*="col"] {
+    grid-column-end: span 12;
+}
+
+/* below 600px typically phone*/
+
+@media only screen and (max-width: 600px) {
+    .sm1 {
+        grid-column-end: span 12;
+    }
+    .sm2 {
+        grid-column-end: span 6;
+    }
+    .sm3 {
+        grid-column-end: span 4;
+    }
+    .sm4 {
+        grid-column-end: span 3;
+    }
+    .sm6 {
+        grid-column-end: span 2;
+    }
+    .sm12 {
+        grid-column-end: span 1;
+    }
+
+	.sm8{
+		grid-column-end: span 8;
+	}
+}
+
+/* above 601px typically tablet*/
+
+@media only screen and (min-width: 601px) {
+    .md1 {
+        grid-column-end: span 12;
+    }
+    .md2 {
+        grid-column-end: span 6;
+    }
+    .md3 {
+        grid-column-end: span 4;
+    }
+    .md4 {
+        grid-column-end: span 3;
+    }
+    .md6 {
+        grid-column-end: span 2;
+    }
+    .md12 {
+        grid-column-end: span 1;
+    }
+	.md8{
+		grid-column-end: span 8;
+	}
+}
+
+/* above 1025px typically desktop*/
+
+@media only screen and (min-width: 1025px) {
+    .col1 {
+        grid-column-end: span 12;
+    }
+    .col2 {
+        grid-column-end: span 6;
+    }
+    .col3 {
+        grid-column-end: span 4;
+    }
+    .col4 {
+        grid-column-end: span 3;
+    }
+    .col6 {
+        grid-column-end: span 2;
+    }
+    .col12 {
+        grid-column-end: span 1;
+    }
+
+	.col8{
+		grid-column-end: span 8;
+	}
+}
+
+
+/* HSTPopUp from PRABIN MAGAR at https://github.com/prabinmagar/bill-divider-vanilla-js/blob/master/index.html*/
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Bill Divider</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+
+    <div class = "container center">
+      <div class = "bill-divider-wrapper">
+        <div class = "title">
+          <h1>Bill Divide</h1>
+        </div>
+
+        <div class = "bill-inputs">
+          <form id = "bill-divider-form">
+            <div class = "form-group">
+              <label for = "subtotal">subtotal bill (&dollar;/&pound;/&euro;)</label>
+              <input type = "number" id = "subtotal" class = "form-control" min = "0" step = "any" required>
+            </div>
+            
+            <div class = "form-group">
+              <label for = "tip">tip (%)</label>
+              <input type = "number" id = "tip" class = "form-control" min = "0" step = "any" required>
+            </div>
+
+            <div class = "form-group">
+              <label for = "no-of-person">no of person</label>
+              <input type = "number" id = "no-of-person" class = "form-control" min = "0" step = "1" required>
+            </div>
+
+            <input type = "submit" id = "calc-btn" value = "calculate">
+          </form>
+        </div>
+
+        <div class = "bill-output">
+          <div class = "text-group">
+            <h3>Total Bill</h3>
+            <span id = "total-bill">$ 00.00</span>
+          </div>
+
+          <div class = "text-group">
+            <h3>Bill Per Person</h3>
+            <span id = "bill-per-person">$ 00.00</span>
+          </div>
+
+          <div class = "text-group">
+            <h3>Total Tip</h3>
+            <span id = "total-tip">$ 00.00</span>
+          </div>
+
+          <div class = "text-group">
+            <h3>Tip Per Person</h3>
+            <span id = "tip-per-person">$ 00.00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    <script src="script.js"></script>
+  </body>
+</html>
+
+
+
+/* Calculator Decoration from PRABIN MAGAR at https://github.com/prabinmagar/vat-calculator-js/blob/master/index.html*/
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>VAT Calculator</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="main.css">
+    </head>
+    <body>
+        
+        <div class = "vat-calc">
+            <h2>VAT Calculator</h2>
+
+            <div class = "main-wrapper">
+                <form>
+                    <div>
+                        <label for = "net-price">NET Price</label>
+                        <input type = "text" id = "net-price" placeholder="0.00">
+                    </div>
+
+                    <div>
+                        <label for = "vat-rate">VAT Rate (%)</label>
+                        <input type = "text" id = "vat-rate" placeholder="0.00">
+                    </div>
+
+                    <div>
+                        <label for = "inc-amount">VAT Inclusive Price</label>
+                        <input type = "text" id = "inc-amount" placeholder="0.00" disabled = true>
+                    </div>
+                </form>
+            </div>
+
+            <button type = "button" class = "main-btn" id = "calc-btn">Calculate</button>
+
+            <button type = "button" class = "main-btn" id = "reset-btn">Reset</button>
+        </div>
+        
+        <script src="script.js" async defer></script>
+    </body>
+</html>

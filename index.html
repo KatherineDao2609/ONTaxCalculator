@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Project 1 - Le Dao</title>
+	<link href="css/cited.css" rel="stylesheet" type="text/css" />
+	<link href="css/style.css" rel="stylesheet" type="text/css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Roboto:wght@300&display=swap" rel="stylesheet">
+  
+</head>
+
+<body>
+  <section>
+  <div class="center-content">
+      <a href="index.html" id="logo"><img src=Image/logo.png width="200" height="80" alt="logo image"></a>
+  </div>
+  </section>
+  
+  <section class="white-bg">
+			<div class="grid">
+        <div class="sm1 md1 col2 left-text">
+				<article>
+					<h1>GST/HST calculator</h1>
+					<p>Use this calculator to find out the amount of tax that applies to sales in Ontario.</p>
+				</article>
+        </div>
+         <div class = "sm1 md1 col2 vat-calc">
+            <div class = "main-wrapper">
+              
+              <form>
+                
+          
+                   <label for = "net-price">Amount</label>
+                   <input type="text" id="amount" placeholder="0.00">
+                
+
+                 <div>
+                    <button type = "button" class = "main-btn" id = "calc-btn">Calculate!</button>
+                 </div>
+                <br>
+                </form>
+
+              <br>
+
+                
+                <div>
+                    <p id="provincial-tax">Provincial Tax (8%): <span id="provincial-tax-amount"></span> </p>
+                    <p id="federal-tax">Federal Tax (5%): <span id="federal-tax-amount"></span></p>
+                    <p class id="total-tax"><strong>Total HST (13%): <span id="total-tax-amount"></span></p><br>
+                    <p id="after-tax"><strong>Amount After Tax: <span id="after-tax-amount"></span></p>
+                </div>
+            </div>
+        <script src="script.js" async defer></script>
+			</div>
+	</section>
+
+  <section class="image-bg">
+    <div class="grid">
+			<div class="sm1 md1 col2 add-left-margin">
+        <h2>Is It Taxable?</h2>
+        <br>
+        <p class="add-bottom-margin">There are tax-excemption rules applied for each product/service.<br>To determine what GST/HST rate to charge, you have to know which supplies are taxable and at which rate.</p>
+        <div>
+        <a href="https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/charge-collect-type-supply.html" class="button1">Learn more</a>
+        </div>
+      </div>
+			</div>
+  </section>
+
+  
+	<section class="footer-bg">
+		<div class="grid">
+			<div class="sm1 md1 col1">
+				<p> &copy; The Ontario Taxberg 2023 </p>
+			</div>
+		</div>
+	</section>
+   
+    </body>
+
+</html>
